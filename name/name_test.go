@@ -3,7 +3,7 @@ package name
 import (
 	"testing"
 
-	"github.com/wishmatic/character-namegen/gender"
+	"github.com/wishmatic/namegen/gender"
 )
 
 func TestGenerate(t *testing.T) {

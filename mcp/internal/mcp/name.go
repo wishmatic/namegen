@@ -7,8 +7,8 @@ import (
 
 	"github.com/google/jsonschema-go/jsonschema"
 	"github.com/modelcontextprotocol/go-sdk/mcp"
-	"github.com/wishmatic/character-namegen/gender"
-	"github.com/wishmatic/character-namegen/name"
+	"github.com/wishmatic/namegen/gender"
+	"github.com/wishmatic/namegen/name"
 	"go.uber.org/zap"
 )
 

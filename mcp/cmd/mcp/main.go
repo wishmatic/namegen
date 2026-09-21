@@ -11,8 +11,8 @@ import (
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 
-	"github.com/wishmatic/character-namegen/mcp/internal/config"
-	"github.com/wishmatic/character-namegen/mcp/internal/server"
+	"github.com/wishmatic/namegen/mcp/internal/config"
+	"github.com/wishmatic/namegen/mcp/internal/server"
 )
 
 func main() {

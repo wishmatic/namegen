@@ -1,4 +1,4 @@
-name: publish character-namegen
+name: publish namegen
 
 on:
     push:

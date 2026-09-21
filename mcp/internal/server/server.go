@@ -11,9 +11,9 @@ import (
 	"github.com/go-chi/chi/v5/middleware"
 	"github.com/go-chi/cors"
 	"github.com/modelcontextprotocol/go-sdk/mcp"
-	"github.com/wishmatic/character-namegen/mcp/internal/auth"
-	"github.com/wishmatic/character-namegen/mcp/internal/config"
-	mcpServer "github.com/wishmatic/character-namegen/mcp/internal/mcp"
+	"github.com/wishmatic/namegen/mcp/internal/auth"
+	"github.com/wishmatic/namegen/mcp/internal/config"
+	mcpServer "github.com/wishmatic/namegen/mcp/internal/mcp"
 	"go.uber.org/zap"
 )
 

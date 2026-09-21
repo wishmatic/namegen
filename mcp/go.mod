@@ -1,4 +1,4 @@
-module github.com/wishmatic/character-namegen/mcp
+module github.com/wishmatic/namegen/mcp
 
 go 1.27
 
@@ -9,7 +9,7 @@ require (
 	github.com/google/jsonschema-go v0.4.3
 	github.com/joho/godotenv v1.5.1
 	github.com/modelcontextprotocol/go-sdk v1.7.0
-	github.com/wishmatic/character-namegen v0.0.0
+	github.com/wishmatic/namegen v0.0.0
 	go.uber.org/zap v1.28.0
 )
 
@@ -25,4 +25,4 @@ require (
 	golang.org/x/time v0.15.0 // indirect
 )
 
-replace github.com/wishmatic/character-namegen => ../
+replace github.com/wishmatic/namegen => ../

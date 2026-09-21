@@ -1,4 +1,4 @@
-name: character-namegen CI
+name: namegen CI
 
 on:
     push:

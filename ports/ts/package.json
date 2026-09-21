@@ -5,7 +5,7 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wishmatic/character-namegen.git",
+    "url": "git+https://github.com/wishmatic/namegen.git",
     "directory": "ports/ts"
   },
   "type": "module",

@@ -7,7 +7,7 @@ import (
 
 func New(log *zap.Logger) (*mcp.Server, error) {
 	srv := mcp.NewServer(&mcp.Implementation{
-		Name:    "character-namegen",
+		Name:    "namegen",
 		Version: "0.1.0",
 	}, nil)
 

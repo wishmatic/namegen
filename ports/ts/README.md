@@ -36,5 +36,5 @@ const generated = generate(Female);
 ## License
 
 Apache-2.0. The name lists are derived from public sources and transformed and cleaned by us; please see the
-[credits](https://github.com/wishmatic/character-namegen#credits) and
-[LICENSE](https://github.com/wishmatic/character-namegen/blob/main/LICENSE).
+[credits](https://github.com/wishmatic/namegen#credits) and
+[LICENSE](https://github.com/wishmatic/namegen/blob/main/LICENSE).

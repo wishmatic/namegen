@@ -3,8 +3,8 @@ package mcp
 import (
 	"testing"
 
-	"github.com/wishmatic/character-namegen/gender"
-	"github.com/wishmatic/character-namegen/name"
+	"github.com/wishmatic/namegen/gender"
+	"github.com/wishmatic/namegen/name"
 	"go.uber.org/zap"
 )
 

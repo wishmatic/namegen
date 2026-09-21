@@ -7,8 +7,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/wishmatic/character-namegen/mcp/internal/auth"
-	"github.com/wishmatic/character-namegen/mcp/internal/config"
+	"github.com/wishmatic/namegen/mcp/internal/auth"
+	"github.com/wishmatic/namegen/mcp/internal/config"
 	"go.uber.org/zap"
 )
 

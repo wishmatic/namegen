@@ -1,4 +1,6 @@
-# character-namegen
+<img src="docs/images/logo.webp" alt="Namegen MCP Logo" width="128">
+
+# Namegen
 
 RPG name generator with a decently good IRL name generator for Golang and JS, with an MCP server.
 
@@ -13,7 +15,7 @@ docker run -p 8080:8080 ghcr.io/wishmatic/namegen-mcp
 ## Go
 
 ```sh
-go get github.com/wishmatic/character-namegen
+go get github.com/wishmatic/namegen
 ```
 
 ### `name.Generate`
@@ -22,8 +24,8 @@ The core name generator.
 
 ```go
 import (
-	"github.com/wishmatic/character-namegen/gender"
-	"github.com/wishmatic/character-namegen/name"
+	"github.com/wishmatic/namegen/gender"
+	"github.com/wishmatic/namegen/name"
 )
 
 n := name.Generate(gender.Male, nil)
@@ -34,6 +36,8 @@ n := name.Generate(gender.Male, nil)
 `*name.Culture` to pin a culture, or `nil` to pick one at random.
 
 ## TypeScript
+
+Note this is called "character-namegen", not "namegen".
 
 ```sh
 pnpm add character-namegen

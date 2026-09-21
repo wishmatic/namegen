@@ -2,33 +2,19 @@
 
 RPG name generator with a decently good IRL name generator for Golang and JS, with an MCP server.
 
-## Quickstart
+## MCP
 
-If you're importing into a Go project, run:
+To run the MCP server, deploy via Docker:
+
+```sh
+docker run -p 8080:8080 ghcr.io/wishmatic/namegen-mcp
+```
+
+## Go
 
 ```sh
 go get github.com/wishmatic/character-namegen
 ```
-
-If you're using TypeScript, run:
-
-```sh
-npm install character-namegen
-# ...or
-pnpm add character-namegen
-# ...or
-yarn add character-namegen
-# ...or
-bun add character-namegen
-```
-
-If you want to run the MCP server, do so with the published Docker image.
-
-```sh
-docker run -p 8080:8080 ghcr.io/wishmatic/character-namegen
-```
-
-## Go
 
 ### `name.Generate`
 
@@ -48,6 +34,10 @@ n := name.Generate(gender.Male, nil)
 `*name.Culture` to pin a culture, or `nil` to pick one at random.
 
 ## TypeScript
+
+```sh
+pnpm add character-namegen
+```
 
 The package README (what npm shows) is [`ports/ts/README.md`](ports/ts/README.md).
 
@@ -80,16 +70,16 @@ The data source is transformative and are not verbatim copies of the upstream da
 ### GPL-ish
 
 - [sctg-development/french-names-extractor](https://github.com/sctg-development/french-names-extractor)
-  - GNU Affero General Public License v3.0
+    - GNU Affero General Public License v3.0
 - [psychbruce/ChineseNames](https://github.com/psychbruce/ChineseNames)
-  - GPL
+    - GPL
 
 ### Other
 
 - [COMHIS/names_and_genders](https://github.com/COMHIS/names_and_genders)
-  - University of London and COMHIS.
+    - University of London and COMHIS.
 - [van-himmelheimer/German-Name-Generator](https://github.com/van-himmelheimer/German-Name-Generator)
-  - Unlicenced.
+    - Unlicenced.
 
 ## License
 

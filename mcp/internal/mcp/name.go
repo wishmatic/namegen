@@ -43,24 +43,33 @@ type generateNameOutput struct {
 }
 
 func registerGenerateName(srv *mcp.Server, log *zap.Logger) {
+	notDestructive := false
+	closedWorld := false
+
 	mcp.AddTool(srv, &mcp.Tool{
-		Name:        "generate_name",
+		Name:        "name",
 		Description: generateNameDescription(),
 		InputSchema: generateNameSchema(),
+		Annotations: &mcp.ToolAnnotations{
+			ReadOnlyHint:    true,
+			DestructiveHint: &notDestructive,
+			IdempotentHint:  true,
+			OpenWorldHint:   &closedWorld,
+		},
 	}, func(
 		ctx context.Context,
 		_ *mcp.CallToolRequest,
 		in generateNameInput,
 	) (*mcp.CallToolResult, generateNameOutput, error) {
 		log.Debug("tool called",
-			zap.String("tool", "generate_name"),
+			zap.String("tool", "name"),
 			zap.String("gender", in.Gender),
 			zap.String("culture", in.Culture),
 		)
 
 		g, culture, err := resolveGenderAndCulture(in.Gender, in.Culture)
 		if err != nil {
-			return nil, generateNameOutput{}, fmt.Errorf("generate_name: %w", err)
+			return nil, generateNameOutput{}, fmt.Errorf("name: %w", err)
 		}
 
 		n := name.Generate(g, culture)
@@ -133,7 +142,7 @@ func resolveCulture(s string) (*name.Culture, error) {
 func generateNameSchema() *jsonschema.Schema {
 	s, err := jsonschema.For[generateNameInput](nil)
 	if err != nil {
-		panic(fmt.Sprintf("generate_name: infer input schema: %v", err))
+		panic(fmt.Sprintf("name: infer input schema: %v", err))
 	}
 
 	s.Properties["gender"].Enum = append([]any{""}, toEnum(genders)...)

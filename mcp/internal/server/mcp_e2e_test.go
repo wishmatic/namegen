@@ -64,18 +64,20 @@ func TestMCPListsAndCallsGenerateName(t *testing.T) {
 		t.Fatalf("ListTools() unexpected error: %v", err)
 	}
 
-	var found bool
+	var nameTool *mcp.Tool
 	for _, tool := range tools.Tools {
-		if tool.Name == "generate_name" {
-			found = true
+		if tool.Name == "name" {
+			nameTool = tool
 		}
 	}
-	if !found {
-		t.Fatalf("generate_name not registered; tools = %v", tools.Tools)
+	if nameTool == nil {
+		t.Fatalf("name not registered; tools = %v", tools.Tools)
 	}
 
+	assertToolHints(t, nameTool)
+
 	res, err := cs.CallTool(ctx, &mcp.CallToolParams{
-		Name:      "generate_name",
+		Name:      "name",
 		Arguments: map[string]any{"gender": "female", "culture": "Nordic"},
 	})
 	if err != nil {
@@ -87,6 +89,30 @@ func TestMCPListsAndCallsGenerateName(t *testing.T) {
 
 	if !strings.Contains(contentText(res.Content), "given_name") {
 		t.Errorf("CallTool() result missing given_name: %v", res.Content)
+	}
+}
+
+func assertToolHints(t *testing.T, tool *mcp.Tool) {
+	t.Helper()
+
+	if tool.Annotations == nil {
+		t.Fatalf("tool %q: missing annotations", tool.Name)
+	}
+
+	if !tool.Annotations.ReadOnlyHint {
+		t.Errorf("tool %q: readOnlyHint = false, want true", tool.Name)
+	}
+
+	if tool.Annotations.DestructiveHint == nil || *tool.Annotations.DestructiveHint {
+		t.Errorf("tool %q: destructiveHint = %v, want explicit false", tool.Name, tool.Annotations.DestructiveHint)
+	}
+
+	if !tool.Annotations.IdempotentHint {
+		t.Errorf("tool %q: idempotentHint = false, want true", tool.Name)
+	}
+
+	if tool.Annotations.OpenWorldHint == nil || *tool.Annotations.OpenWorldHint {
+		t.Errorf("tool %q: openWorldHint = %v, want explicit false", tool.Name, tool.Annotations.OpenWorldHint)
 	}
 }
 

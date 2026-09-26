@@ -13,6 +13,11 @@
 	"hostRules": [],
 	"packageRules": [
 		{
+			"matchManagers": ["gomod"],
+			"matchPackageNames": ["github.com/wishmatic/namegen"],
+			"enabled": false
+		},
+		{
 			"groupName": "Update dev dependencies via Renovate",
 			"matchDepTypes": ["devDependencies"],
 			"matchUpdateTypes": ["patch", "minor"],
